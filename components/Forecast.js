@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import constructor from './components/Forecast'
+import { Text, View } from 'react-native';
+import Forecast from './components/Forecast'
 
 
 export default class Forecast extends React.Component { 
