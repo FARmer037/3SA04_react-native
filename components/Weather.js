@@ -12,6 +12,25 @@ export default class Weather extends React.Component {
         }
     }
 
+    fetchData = () => {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=90110,th&units=metric&APPID=4a39592e3295c25a1ddda224e3e4827d`)
+            .then((response) => response.json())
+            .then((json) => {
+                this.setState({
+                    forecast: {
+                        main: json.weather[0].main,
+                        description: json.weather[0].description,
+                        temp: json.main.temp
+                    }
+                });
+            })
+            .catch((error) => {
+                console.warn(error);
+            });
+    }
+
+    componentDidMount = () => this.fetchData()
+
     render() {
         return (
             <View style={styles.container}>
@@ -47,14 +66,14 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     zip: {
-        width: '100%', 
-        height: '20%', 
+        width: '100%',
+        height: '20%',
         flexDirection: 'column',
         justifyContent: 'flex-end',
         alignItems: 'center',
     },
     forecast: {
-        width: '100%', 
+        width: '100%',
         height: '75%',
     }
 });
