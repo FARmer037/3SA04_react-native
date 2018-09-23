@@ -1,13 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import WeatherScreen from './WeatherScreen';
-import ZipCodeScreen from './ZipCodeScreen';
+import WeatherScreen from './components/WeatherScreen';
+import ZipCodeScreen from './components/ZipCodeScreen';
 
 const RootStack = createStackNavigator({ 
   Weather: WeatherScreen, 
   ZipCode: ZipCodeScreen 
-},{ 
+},
+{ 
   initialRouteName: 'Weather', 
 })
 

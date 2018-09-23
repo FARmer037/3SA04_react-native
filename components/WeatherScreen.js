@@ -1,11 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Weather from './components/Weather'
+import Weather from './Weather'
 
 export default class WeatherScreen extends React.Component {
     static navigationOptions = ({ navigation }) => {
         return {
-            headerTitle: (<Text>Weather</Text>),
+            headerTitle: (
+                <View style={styles.header}>
+                    <Text style={styles.textHeader}>Weather</Text>
+                </View>
+            ),
         }
     }
 
@@ -15,3 +19,13 @@ export default class WeatherScreen extends React.Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    textHeader: {
+        fontSize: 20,
+    },
+    header: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
+})
