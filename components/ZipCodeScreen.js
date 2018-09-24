@@ -21,7 +21,10 @@ const _keyExtractor = item => item.code
 export default class ZipCodeScreen extends React.Component {
     static navigationOptions = ({ navigation }) => {
         return {
-            headerTitle: (<Text>Choose a zip code</Text>),
+            headerTitle: (<View style={{width: '100%'}}>
+                <Text style={styles.heater}>Choose a zip code</Text>
+            </View>
+            ),
         }
     }
     render() {
@@ -40,13 +43,22 @@ export default class ZipCodeScreen extends React.Component {
 const styles = StyleSheet.create({
     zipItem: {
         flexDirection: 'row',
+        flex: 1,
     },
     zipPlace: {
         flex: 1,
+        paddingTop: 40,
+        paddingLeft: 30,
         fontSize: 20,
     },
     zipCode: {
         flex: 1,
+        paddingTop: 40,
+        textAlign: 'center',
         fontSize: 20,
     },
+    heater: {
+        fontSize: 20,
+        textAlign: 'center',
+    }
 });

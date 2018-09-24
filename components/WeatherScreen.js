@@ -6,8 +6,8 @@ export default class WeatherScreen extends React.Component {
     static navigationOptions = ({ navigation }) => {
         return {
             headerTitle: (
-                <View style={styles.header}>
-                    <Text style={styles.textHeader}>Weather</Text>
+                <View style={{width: '100%'}}>
+                    <Text style={styles.header}>Weather</Text>
                 </View>
             ),
         }
@@ -21,11 +21,8 @@ export default class WeatherScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    textHeader: {
-        fontSize: 20,
-    },
     header: {
-        justifyContent: 'center',
-        alignItems: 'center',
+        fontSize: 20,
+        textAlign: 'center',
     }
 })

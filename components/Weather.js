@@ -51,7 +51,7 @@ export default class Weather extends React.Component {
 }
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 25,
+        // paddingTop: 25,
     },
     backdrop: {
         width: '100%',
