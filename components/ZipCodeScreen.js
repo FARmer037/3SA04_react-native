@@ -10,10 +10,12 @@ const availableZipItems = [
 ]
 
 const ZipItem = ({ place, code, navigate }) => (
-    <View style={styles.zipItem}>
-        <Text style={styles.zipPlace}>{place}</Text>
-        <Text style={styles.zipCode}>{code}</Text>
-    </View>
+    <TouchableHighlight onPress={() => navigate('Weather', { zipCode: code })}>
+        <View style={styles.zipItem}>
+            <Text style={styles.zipPlace}>{place}</Text>
+            <Text style={styles.zipCode}>{code}</Text>
+        </View>
+    </TouchableHighlight>
 )
 
 const _keyExtractor = item => item.code
@@ -21,7 +23,7 @@ const _keyExtractor = item => item.code
 export default class ZipCodeScreen extends React.Component {
     static navigationOptions = ({ navigation }) => {
         return {
-            headerTitle: (<View style={{width: '100%'}}>
+            headerTitle: (<View style={{ width: '100%' }}>
                 <Text style={styles.heater}>Choose a zip code</Text>
             </View>
             ),
@@ -59,6 +61,7 @@ const styles = StyleSheet.create({
     },
     heater: {
         fontSize: 20,
-        textAlign: 'center',
+        // textAlign: 'center',
+        paddingLeft: 100,
     }
 });

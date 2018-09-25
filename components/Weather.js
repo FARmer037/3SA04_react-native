@@ -14,7 +14,7 @@ export default class Weather extends React.Component {
     }
 
     fetchData = () => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=90110,th&units=metric&APPID=4a39592e3295c25a1ddda224e3e4827d`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.props.zipCode},th&units=metric&APPID=4a39592e3295c25a1ddda224e3e4827d`)
             .then((response) => response.json())
             .then((json) => {
                 this.setState({
