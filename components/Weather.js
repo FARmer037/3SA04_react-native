@@ -8,7 +8,7 @@ export default class Weather extends React.Component {
         super(props);
         this.state = {
             forecast: {
-                main: 'main', description: 'description', temp: 0
+                name: 'name', main: 'main', description: 'description', temp: 0, temp_min: 0, temp_max: 0
             }
         }
     }
@@ -19,9 +19,12 @@ export default class Weather extends React.Component {
             .then((json) => {
                 this.setState({
                     forecast: {
+                        name: json.name,
                         main: json.weather[0].main,
                         description: json.weather[0].description,
-                        temp: json.main.temp
+                        temp: json.main.temp,
+                        temp_min: json.main.temp_min,
+                        temp_max: json.main.temp_max
                     }
                 });
             })
@@ -41,7 +44,7 @@ export default class Weather extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <ImageBackground source={require('./bg.jpeg')} style={styles.backdrop}>
+                <ImageBackground source={require('./bg2.jpg')} style={styles.backdrop}>
                     <View style={styles.show}>
                         <View style={styles.zip}>
                             <Text style={styles.txt}>Zip code is {this.props.zipCode}.</Text>
@@ -65,18 +68,18 @@ const styles = StyleSheet.create({
     },
     show: {
         width: '100%',
-        height: '45%',
-        backgroundColor: 'rgba(0,0,0,0.5)',
+        height: '65%',
+        backgroundColor: 'rgba(0,0,0,0.1)',
     },
     txt: {
-        fontSize: 20,
+        fontSize: 15,
         color: 'white',
     },
     zip: {
         width: '100%',
         height: '20%',
         flexDirection: 'column',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         alignItems: 'center',
     },
     forecast: {

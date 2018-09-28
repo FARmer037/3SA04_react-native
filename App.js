@@ -6,7 +6,7 @@ import ZipCodeScreen from './components/ZipCodeScreen';
 
 const RootStack = createStackNavigator({ 
   Weather: WeatherScreen, 
-  ZipCode: ZipCodeScreen 
+  ZipCode: ZipCodeScreen,
 },
 { 
   initialRouteName: 'Weather',
