@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import Forecast from './Forecast';
-import WeatherScreen from './WeatherScreen';
 
 export default class Weather extends React.Component {
     constructor(props) {
@@ -35,10 +34,10 @@ export default class Weather extends React.Component {
 
     componentDidMount = () => this.fetchData()
 
-    componentDidUpdate = (prevProps) => { 
-        if (prevProps.zipCode !== this.props.zipCode) { 
-            this.fetchData() 
-        } 
+    componentDidUpdate = (prevProps) => {
+        if (prevProps.zipCode !== this.props.zipCode) {
+            this.fetchData()
+        }
     }
 
     render() {
@@ -53,6 +52,7 @@ export default class Weather extends React.Component {
                             <Forecast {...this.state.forecast} />
                         </View>
                     </View>
+                    <Text style={styles.myName}>MUSTOFA  SACHI  5935512037</Text>
                 </ImageBackground>
             </View>
         );
@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
     },
     backdrop: {
         width: '100%',
-        height: '100%'
+        height: '100%',
+        justifyContent: 'space-between'
     },
     show: {
         width: '100%',
@@ -85,5 +86,10 @@ const styles = StyleSheet.create({
     forecast: {
         width: '100%',
         height: '75%',
+    },
+    myName: {
+        fontSize: 15, 
+        color: 'white', 
+        textAlign: 'center'
     }
 });
