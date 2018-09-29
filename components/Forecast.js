@@ -16,7 +16,7 @@ export default class Forecast extends React.Component {
                     </View>
                     <View style={styles.box}>
                         <Image style={{paddingLeft: 30}} source={require('./temp_max.png')} />
-                        <Text style={styles.minMax}>{this.props.temp_min}°</Text>
+                        <Text style={styles.minMax}>{this.props.temp_max}°</Text>
                     </View>
                 </View>
             </View>
